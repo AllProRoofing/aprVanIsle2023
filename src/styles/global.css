@@ -1,0 +1,52 @@
+:root {
+    --borderRadius: 0px;
+
+    --colorPrimary: #BF3131; 
+    --colorBgPrimary: #ddDDdd;
+    --colorBgSecondary: rgba(0,0,0,0.8);
+    --colorTextLight: #000;
+    --colorTextDark: #fFf;
+
+    --fontPrimary: sans-serif;
+
+    --stdMargin: 1rem;
+    --stdPadding: 1rem;
+}
+
+:link {
+    color: var(--colorPrimary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+* {
+    border-radius: var(--borderRadius);
+    transition-duration: 200ms;
+}
+
+body {
+    aspect-ratio: auto;
+        height: auto;
+            min-height: 110vw;
+        width: auto;
+    background-color: var(--colorPrimary);
+    border-radius: var(--borderRadius);
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px; 
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    margin: var(--stdMargin);
+    padding-left: var(--stdPadding);
+    padding-top: var(--stdPadding);
+}
+
+p {
+    background-color: var(--colorBgSecondary);
+    color: var(--colorTextDark); 
+    margin: auto;
+    padding: var(--stdPadding);
+    max-width: 50rem;
+}

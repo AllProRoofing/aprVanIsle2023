@@ -1,0 +1,20 @@
+<script>
+    import HomeHeader from "./homeHeader.svelte";
+    import Navbar from "./navbar.svelte";
+    import Specialtys from "./specialtys.svelte";
+    import YearsExp from "../../yearsExp.svelte";
+</script>
+
+<div id=''>
+    <Navbar />
+    <br />
+    <HomeHeader />
+    <br />
+    <Specialtys />
+    <br /> 
+    <YearExp />
+</div>
+
+<style>
+    
+</style>
