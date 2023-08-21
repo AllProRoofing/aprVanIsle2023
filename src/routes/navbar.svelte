@@ -25,7 +25,7 @@
                 >
             </div>
         </a>
-        <!--<div id='navbarLinkContainer'>
+        <div id='navbarLinkContainer'>
           {#each Object.entries(navbarItems) as [itemName, itemLink]}
             <a href={itemLink}>
               <div>
@@ -35,7 +35,7 @@
               </div>
             </a>
           {/each}
-        </div>-->
+        </div>
     </div>
     <!--
     <div id='navbarExtras'>
