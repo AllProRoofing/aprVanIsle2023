@@ -66,7 +66,6 @@ you shouldn't see this 🤔
 <br />
 
 <style>
-    /* Your CSS styles here */
 :root {
     --borderRadius: 10px;
 
@@ -130,4 +129,3 @@ p {
     max-width: 50rem;
 }
 </style>
-

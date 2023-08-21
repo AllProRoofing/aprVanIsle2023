@@ -7,7 +7,7 @@
     <meta location="Victoria" />
 
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <!-- <link rel="stylesheet" href="/src/styles/global.css" /> -->
     <meta name="viewport" content="width=device-width" />
     %sveltekit.head%
 </head>
@@ -39,13 +39,24 @@
     }
 
     // Function to repeatedly check window size change every X seconds
-    <style>
-        :root {
-            --borderRadius: 10px;
+    async function CheckWindowSizeChangeEveryXSeconds() {
+        setInterval(async () => {
+            console.log('Checking window size change...');
+            await CheckWindowSizeChange();
+        }, 1000); // Check every 1 second
+    }
+
+    // Start checking window size change
+    CheckWindowSizeChangeEveryXSeconds(); 
+</script>
+
+<style>
+    :root {
+        --borderRadius: 10px;
 
         --colorPrimary: #BF3131;
         --colorBgPrimary: #ddDDdd;
-        --colorBgSecondary: rgba(0, 0, 0 ,0.9);
+        --colorBgSecondary: rgba(0, 0, 0, 0.9);
         --colorTextLight: #000;
         --colorTextDark: #fff;
 
@@ -53,21 +64,21 @@
 
         --stdMargin: 1rem;
         --stdPadding: 1rem;
-}
+    }
 
-        :link {
-            color: var(--colorPrimary);
+    :link {
+        color: var(--colorPrimary);
         cursor: pointer;
         text-decoration: none;
-}
+    }
 
-        * {
-            border - radius: var(--borderRadius);
+    * {
+        border-radius: var(--borderRadius);
         transition-duration: 200ms;
-}
+    }
 
-        body {
-            aspect - ratio: auto;
+    body {
+        aspect-ratio: auto;
         height: auto;
         min-height: 110vw;
         width: auto;
@@ -77,23 +88,28 @@
         margin: 0px;
         padding: 0px;
         overflow-x: hidden;
-}
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            background - color: var(--colorBgSecondary);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        background-color: var(--colorBgSecondary);
         color: var(--colorTextDark);
         margin: var(--stdMargin);
         font-family: serif;
         font-style: italic;
         font-weight: bolder;
-        text-transform:uppercase;
+        text-transform: uppercase;
         padding: var(--stdPadding);
         text-align: center;
         width: calc((100%) - 2(var(--stdPadding)));
-}
+    }
 
-        p {
-            background - color: var(--colorBgSecondary);
+    p {
+        background-color: var(--colorBgSecondary);
         color: var(--colorTextDark);
         font-family: sans-serif;
         letter-spacing: 1px;
@@ -101,7 +117,64 @@
         margin: auto;
         padding: var(--stdPadding);
         max-width: 50rem;
-}
-</script>
+    }
+
+    #navbarContainer {
+        width: 100%;
+        position: fixed;
+        top: 0px;
+    }
+
+    #navbar {
+        background-color: #222;
+        border-radius: 0px;
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fit, minmax(20rem, 1fr));
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .navbarItem {
+        background-color: transparent;
+        color: var(--colorPrimary);
+        height: 1rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #navbarLinkContainer {
+        color: var(--colorTextDark) !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #navbarLinkContainer>a>div>p {
+        color: var(--colorTextDark) !important;
+    }
+
+    #navbarLinkContainer>a>div>p:hover {
+
+        color: var(--colorPrimary) !important;
+    }
+
+    #navbarExtras {
+        background-color: var(--colorPrimary);
+        color: white !important;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #navbarExtras>a>div>p {
+        font-size: 1.2rem;
+        transform: translateY(-0.4rem);
+    }
+
+    #navbarExtras:hover {
+        color: #333;
+    }
+</style>
 
 </html>
