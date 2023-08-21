@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta lang='en' />
+    <meta location="Victoria" />
+
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
     <link rel="stylesheet" href="/src/styles/global.css" />
     <meta name="viewport" content="width=device-width" />
@@ -12,5 +15,39 @@
 <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
 </body>
+
+<script>
+    // Get initial window size
+    let initialWindowSize = [window.innerWidth, window.innerHeight];
+
+    // Function to check window size change
+    async function CheckWindowSizeChange() {
+        const currentWindowSize = [window.innerWidth, window.innerHeight];
+
+        if (
+            currentWindowSize[0] !== initialWindowSize[0] ||
+            currentWindowSize[1] !== initialWindowSize[1]
+        ) {
+            // If changed, then throw warning
+            alert(
+                "Window size change detected!\n\nYou're not in trouble or anything! Please note that this site is designed in a way where various visual elements are configured on load. Resizing the window may cause some issues.\n\nIf you encounter problems, simply reloading the page should fix them!"
+            );
+
+            // Update the initial window size to the current size
+            initialWindowSize = currentWindowSize;
+        }
+    }
+
+    // Function to repeatedly check window size change every X seconds
+    async function CheckWindowSizeChangeEveryXSeconds() {
+        setInterval(async () => {
+            console.log('Checking window size change...');
+            await CheckWindowSizeChange();
+        }, 1000); // Check every 1 second
+    }
+
+    // Start checking window size change
+    CheckWindowSizeChangeEveryXSeconds(); 
+</script>
 
 </html>

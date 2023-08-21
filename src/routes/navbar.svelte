@@ -20,7 +20,7 @@
         <a href='/'>
             <div style="width: 100% !important;">
                 <img
-                    src="./aprLogoThin.svg"
+                    src="./aprLogo40Years.svg"
                     alt="all pro roofing logo"
                 >
             </div>
@@ -37,6 +37,7 @@
           {/each}
         </div>
     </div>
+    <!--
     <div id='navbarExtras'>
         {#each Object.entries(navbarExtras) as [itemName, itemLink]}
             <a href={itemLink}>
@@ -48,6 +49,7 @@
             </a>
         {/each}
     </div>
+    -->
 </div>
 
 
@@ -84,6 +86,7 @@
         color: var(--colorTextDark) !important; 
     }
     #navbarLinkContainer>a>div>p:hover {
+   
         color: var(--colorPrimary) !important; 
     }
     #navbarExtras {

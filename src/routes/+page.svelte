@@ -4,9 +4,8 @@
     import HomeHeader from './homeHeader.svelte';
     import Navbar from './navbar.svelte';
     import Since1987 from './since1987.svelte';
-    import Specialtys from './specialtys.svelte';
+    import Specialty from './specialty.svelte';
     import VerifiedAndAwarded from './verifiedAndAwarded.svelte';
-
     async function setSpacerSize() {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -42,19 +41,28 @@
         }
     });
 </script>
+<Navbar />
 
 <div id="spacer">
-    you shouldn't see this 🤔
+you shouldn't see this 🤔
 </div>
-<Navbar />
-<br />
+
+
 <HomeHeader />
+<br />
+<br />
 <br />
 <Since1987 />
 <br />
-<Specialtys />
+<br />
+<br />
+<Specialty />
 <br /> 
+<br />
+<br />
 <VerifiedAndAwarded />
+<br />
+<br />
 <br />
 
 <style>
