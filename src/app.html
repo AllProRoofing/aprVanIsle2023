@@ -29,9 +29,8 @@
             currentWindowSize[1] !== initialWindowSize[1]
         ) {
             // If changed, then throw warning
-            alert(
-                "Window size change detected!\n\nYou're not in trouble or anything! Please note that this site is designed in a way where various visual elements are configured on load. Resizing the window may cause some issues.\n\nIf you encounter problems, simply reloading the page should fix them!"
-            );
+            //alert("Window size change detected!\n\nYou're not in trouble or anything! Please note that this site is designed in a way where various visual elements are configured on load. Resizing the window may cause some issues.\n\nIf you encounter problems, simply reloading the page should fix them!"
+            //);
 
             // Update the initial window size to the current size
             initialWindowSize = currentWindowSize;
@@ -52,7 +51,7 @@
 
 <style>
     :root {
-        --borderRadius: 10px;
+        --borderRadius: 0px;
 
         --colorPrimary: #BF3131;
         --colorBgPrimary: #ddDDdd;
@@ -103,9 +102,12 @@
         font-style: italic;
         font-weight: bolder;
         text-transform: uppercase;
+        margin: auto;
+        margin-bottom: 1rem;
         padding: var(--stdPadding);
         text-align: center;
         width: calc((100%) - 2(var(--stdPadding)));
+        max-width: 50rem;
     }
 
     p {
